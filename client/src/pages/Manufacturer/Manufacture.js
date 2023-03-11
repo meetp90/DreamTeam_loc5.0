@@ -1,4 +1,4 @@
-import React from "react";
+import React,{useState} from "react";
 import TextField from "@material-ui/core/TextField";
 import Button from "@material-ui/core/Button";
 import { useRole } from "../../context/RoleDataContext";
@@ -6,18 +6,62 @@ import Navbar from "../../components/Navbar";
 import { useStyles } from "../../components/Styles";
 import Grid from "@material-ui/core/Grid";
 import Loader from "../../components/Loader";
+import  create  from "ipfs-http-client";
+import {Buffer} from 'buffer'
+
+
+const projectId = '2MCR81xh4vPrqI0y4SQtv09NTnb' ;
+const projectSecret = '1db9edb0249dd358814ccfd8f9dfc26d';
+const auth = 'Basic '  + Buffer.from(projectId +':' + projectSecret).toString('base64');
+console.log("done");
+const client = create({
+    host: 'ipfs.infura.io',
+    port: 5001,
+    
+    protocol: 'https',
+    headers: {
+        authorization: auth,
+    },
+});
+
+// const onSubmitHandler = async (event) => {
+//   // event.preventDefault();
+//   const form = event.target;
+//   const files = (form[0]).files;
+
+//   if (!files || files.length === 0) {
+//     return alert("No files selected");
+//   }
+
+//   const file = files[0];
+//   // upload files
+//   const result = await client.add(file);
+
+//   setImages([
+//     ...images,
+//     {
+//       cid: result.cid,
+//       path: result.path,
+//     },
+//   ]);
+
+//   // form.reset();
+// };
+
 
 export default function Manufacture(props) {
   const supplyChainContract = props.supplyChainContract;
   const classes = useStyles();
   const { roles } = useRole();
   const [loading, setLoading] = React.useState(false);
+  const [images, setImages] = useState([])
   const [fvalid, setfvalid] = React.useState(false);
   const navItem = [
     ["Add Product", "/manufacturer/manufacture"],
     ["Ship Product", "/manufacturer/ship"],
     ["All Products", "/manufacturer/allManufacture"],
   ];
+  
   const [manuForm, setManuForm] = React.useState({
     id: 0,
     manufacturerName: "",
@@ -28,7 +72,8 @@ export default function Manufacture(props) {
     productCode: 0,
     productPrice: 0,
     productCategory: "",
-    image:""
+   images:""
+
   });
 
   const handleChangeManufacturerForm = async (e) => {
@@ -37,7 +82,27 @@ export default function Manufacture(props) {
       [e.target.name]: e.target.value,
     });
   };
-
+  const onSubmitHandler = async (event) => {
+    event.preventDefault();
+    const form = event.target;
+    const files = (form[0]).files;
+    console.log(files)
+    if (!files || files.length === 0) {
+      return alert("No files selected");
+    }
+    const file = files[0];
+    const result = await client.add(file);
+    console.log(result)
+    setImages([
+      ...images,
+      {
+        cid: result.cid,
+        path: result.path,
+      },
+    ]);
+    console.log(images)
+    // form.reset();
+  };
   const handleSubmitManufacturerForm = async () => {
     setLoading(true);
 
@@ -62,7 +127,7 @@ export default function Manufacture(props) {
           parseInt(manuForm.productCode),
           parseInt(manuForm.productPrice),
           manuForm.productCategory,
-          manuForm.image
+          manuForm.images
         )
         .send({ from: roles.manufacturer, gas: 999999 })
         // .then(console.log)
@@ -79,7 +144,7 @@ export default function Manufacture(props) {
         productCode: 0,
         productPrice: 0,
         productCategory: "",
-        image:""
+        images:""
       });
     } else {
       setfvalid(true);
@@ -213,10 +278,10 @@ export default function Manufacture(props) {
                     style={{ width: "100%" }}
                   />
                 </Grid>
-                <Button variant="contained" component="label">
-                  Upload File
-                  <input type="file" hidden />
-                </Button>
+                <form onSubmit={onSubmitHandler}>
+                <input type="file" name="file"/>
+                <button type="submit">Upload file</button>
+          </form>
               </Grid>
               <br />
               <p>
@@ -245,6 +310,14 @@ export default function Manufacture(props) {
           </>
         )}
       </Navbar>
+      {images.map((image, index) => (
+          <img
+          alt={`Uploaded #${index + 1}`}
+          src={"ipfs.io/ipfs/" + image.path}
+            style={{ maxWidth: "400px", margin: "15px" }}
+            key={image.cid.toString() + index}
+          />
+        ))}
     </>
   );
 }
