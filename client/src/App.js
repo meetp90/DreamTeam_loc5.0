@@ -2,6 +2,7 @@ import Home from "./pages/Home";
 import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
 import RoleAdmin from "./pages/RoleAdmin";
 import Roles from "./pages/Roles";
+import Manufacture from "./pages/manufacture/Manufacture";
 
 function App() {
   return (
@@ -12,6 +13,7 @@ function App() {
           <Route exact path="/" element={<Home />} />
           <Route path="/roleAdmin" element={<RoleAdmin />} />
           <Route path="/roles" element={<Roles />} />
+          <Route path="/manufacture/Manufacture" element={<Manufacture/>} />
           {/* <Route path="/products" element={<Products />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/singleproduct/:id" element={<SingleProduct />} />
