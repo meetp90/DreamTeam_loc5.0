@@ -28,6 +28,7 @@ export default function Manufacture(props) {
     productCode: 0,
     productPrice: 0,
     productCategory: "",
+    image:""
   });
 
   const handleChangeManufacturerForm = async (e) => {
@@ -60,7 +61,8 @@ export default function Manufacture(props) {
           manuForm.productName,
           parseInt(manuForm.productCode),
           parseInt(manuForm.productPrice),
-          manuForm.productCategory
+          manuForm.productCategory,
+          manuForm.image
         )
         .send({ from: roles.manufacturer, gas: 999999 })
         // .then(console.log)
@@ -77,6 +79,7 @@ export default function Manufacture(props) {
         productCode: 0,
         productPrice: 0,
         productCategory: "",
+        image:""
       });
     } else {
       setfvalid(true);

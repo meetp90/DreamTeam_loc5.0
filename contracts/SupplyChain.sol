@@ -170,12 +170,14 @@ contract SupplyChain {
         string memory productName,
         uint256 productCode,
         uint256 productPrice,
-        string memory productCategory
+        string memory productCategory,
+        string memory image
     ) internal pure {
         product.productdet.productName = productName;
         product.productdet.productCode = productCode;
         product.productdet.productPrice = productPrice;
         product.productdet.productCategory = productCategory;
+        product.productdet.image=image;
     }
 
     
@@ -187,7 +189,8 @@ contract SupplyChain {
         string memory productName,
         uint256 productCode,
         uint256 productPrice,
-        string memory productCategory
+        string memory productCategory,
+        string memory image
     ) public {
         require(hasManufacturerRole(msg.sender));
         uint256 _uid = uid;
@@ -199,6 +202,7 @@ contract SupplyChain {
         product.manufacturer.manufacturerLongitude = manufacturerLongitude;
         product.manufacturer.manufacturerLatitude = manufacturerLatitude;
         product.manufacturer.manufacturedDate = block.timestamp;
+        product.image=image;
 
         product.owner = msg.sender;
         product.manufacturer.manufacturer = msg.sender;
@@ -212,7 +216,8 @@ contract SupplyChain {
             productName,
             productCode,
             productPrice,
-            productCategory
+            productCategory,
+            image
         );
 
         products[_uid] = product;

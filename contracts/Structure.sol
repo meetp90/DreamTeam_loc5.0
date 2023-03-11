@@ -26,6 +26,7 @@ library Structure {
         uint256 productCode;
         uint256 productPrice;
         string productCategory;
+        string image;
     }
     struct ThirdPartyDetails {
         address thirdParty;
@@ -40,6 +41,7 @@ library Structure {
     struct Product {
         uint256 uid;
         uint256 sku;
+        string image;
         address owner;
         State productState;
         ManufactureDetails manufacturer;
