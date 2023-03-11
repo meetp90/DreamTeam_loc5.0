@@ -4,175 +4,148 @@ import { useRole } from "../context/RoleDataContext";
 // import { useStyles } from "../components/Styles";
 
 function RoleAdmin(props) {
-  const accounts = props.accounts;
-  const supplyChainContract = props.supplyChainContract;
-  const { roles, setRoles } = useRole();
+  // const accounts = props.accounts;
+  // const supplyChainContract = props.supplyChainContract;
+  // const { roles, setRoles } = useRole();
 
-  // const classes = useStyles();
+  // // const classes = useStyles();
   const [manufacturerRole, setManufacturerRole] = React.useState("");
   const [thirdPartyRole, setThirdPartyRole] = React.useState("");
   const [deliveryHubRole, setDeliveryHubRole] = React.useState("");
   const [customerRole, setCustomerRole] = React.useState("");
-  const navItem = [];
+  // const navItem = [];
 
-  const handleAddManufacturerRole = async () => {
-    await setRoles({
-      ...roles,
-      manufacturer: manufacturerRole,
-    });
+  // const handleAddManufacturerRole = async () => {
+  //   await setRoles({
+  //     ...roles,
+  //     manufacturer: manufacturerRole,
+  //   });
 
-    localStorage.setItem("mRole", manufacturerRole);
-    await supplyChainContract.methods
-      .addManufacturerRole(manufacturerRole)
-      .send({ from: accounts[0], gas: 100000 })
-      .then(console.log);
+  //   localStorage.setItem("mRole", manufacturerRole);
+  //   await supplyChainContract.methods
+  //     .addManufacturerRole(manufacturerRole)
+  //     .send({ from: accounts[0], gas: 100000 })
+  //     .then(console.log);
 
-    setManufacturerRole("");
-  };
+  //   setManufacturerRole("");
+  // };
 
-  const handleAddThirdPartyRole = async () => {
-    await setRoles({
-      ...roles,
-      thirdparty: thirdPartyRole,
-    });
+  // const handleAddThirdPartyRole = async () => {
+  //   await setRoles({
+  //     ...roles,
+  //     thirdparty: thirdPartyRole,
+  //   });
 
-    localStorage.setItem("tpRole", thirdPartyRole);
-    await supplyChainContract.methods
-      .addThirdPartyRole(thirdPartyRole)
-      .send({ from: accounts[0], gas: 100000 })
-      .then(console.log);
+  //   localStorage.setItem("tpRole", thirdPartyRole);
+  //   await supplyChainContract.methods
+  //     .addThirdPartyRole(thirdPartyRole)
+  //     .send({ from: accounts[0], gas: 100000 })
+  //     .then(console.log);
 
-    setThirdPartyRole("");
-  };
+  //   setThirdPartyRole("");
+  // };
 
-  const handleAddDeliveryHubRole = async () => {
-    await setRoles({
-      ...roles,
-      deliveryhub: deliveryHubRole,
-    });
+  // const handleAddDeliveryHubRole = async () => {
+  //   await setRoles({
+  //     ...roles,
+  //     deliveryhub: deliveryHubRole,
+  //   });
 
-    localStorage.setItem("dhRole", deliveryHubRole);
-    await supplyChainContract.methods
-      .addDeliveryHubRole(deliveryHubRole)
-      .send({ from: accounts[0], gas: 100000 })
-      .then(console.log);
+  //   localStorage.setItem("dhRole", deliveryHubRole);
+  //   await supplyChainContract.methods
+  //     .addDeliveryHubRole(deliveryHubRole)
+  //     .send({ from: accounts[0], gas: 100000 })
+  //     .then(console.log);
 
-    setDeliveryHubRole("");
-  };
+  //   setDeliveryHubRole("");
+  // };
 
-  const handleAddCustomerRole = async () => {
-    await setRoles({
-      ...roles,
-      customer: customerRole,
-    });
+  // const handleAddCustomerRole = async () => {
+  //   await setRoles({
+  //     ...roles,
+  //     customer: customerRole,
+  //   });
 
-    localStorage.setItem("cRole", customerRole);
-    await supplyChainContract.methods
-      .addCustomerRole(customerRole)
-      .send({ from: accounts[0], gas: 100000 })
-      .then(console.log);
+  //   localStorage.setItem("cRole", customerRole);
+  //   await supplyChainContract.methods
+  //     .addCustomerRole(customerRole)
+  //     .send({ from: accounts[0], gas: 100000 })
+  //     .then(console.log);
 
-    setCustomerRole("");
-  };
+  //   setCustomerRole("");
+  // };
 
   return (
     <div>
-      Hi
       <div>
         <div className="">
           <h1 className="">Add Roles</h1>
-          {console.log(roles)}
+          {/* {console.log(roles)} */}
 
-          <form className="" noValidate autoComplete="off">
+          <form className="">
             <div className="">
               <input
                 id="manufacturerRole"
-                label="Enter Manufacturer Address"
-                variant="outlined"
-                value={manufacturerRole}
-                onChange={(e) => setManufacturerRole(e.target.value)}
-                style={{ width: "70%" }}
+                type="text"
+                placeholder="Enter Manufacturer Address"
+                // value={manufacturerRole}
+                onChange={(e) => console.log(e.target.value)}
+                className="border border-gray-700"
               />
-              <button
-                variant="contained"
-                color="primary"
-                onClick={handleAddManufacturerRole}
-                style={{ width: "30%", marginLeft: "10px" }}
-              >
+              <button className="p-3 bg-gray-300" onClick={() => {}}>
                 Add Manufacturer
               </button>
             </div>
           </form>
-
-          <form className="" noValidate autoComplete="off">
+          <form className="" autoComplete="off">
             <div className="">
               <input
-                id="thirdPartyRole"
-                label="Enter Third Party Address "
-                variant="outlined"
-                value={thirdPartyRole}
-                onChange={(e) => setThirdPartyRole(e.target.value)}
-                style={{ width: "70%" }}
+                id="manufacturerRole"
+                name="manufacturerRole"
+                type="text"
+                placeholder="Enter Third Party Address"
+                // value={manufacturerRole}
+                onChange={(e) => console.log(e.target.value)}
+                className="border border-gray-700"
               />
-              <button
-                variant="contained"
-                color="primary"
-                onClick={handleAddThirdPartyRole}
-                style={{ width: "30%", marginLeft: "10px" }}
-              >
-                Add third party
+              <button type="button" onClick={() => {}}>
+                Add Third party
               </button>
             </div>
           </form>
-
           <form className="" noValidate autoComplete="off">
             <div className="">
               <input
-                id="deliveryHubRole"
-                label="Enter Delivery Hub Address"
-                variant="outlined"
-                value={deliveryHubRole}
-                onChange={(e) => setDeliveryHubRole(e.target.value)}
-                style={{ width: "70%" }}
+                id="manufacturerRole"
+                type="text"
+                placeholder="Enter Delivery Hub Address"
+                // value={manufacturerRole}
+                onChange={(e) => console.log(e.target.value)}
+                className="border border-gray-700"
               />
-              <button
-                variant="contained"
-                color="primary"
-                onClick={handleAddDeliveryHubRole}
-                style={{ width: "30%", marginLeft: "10px" }}
-              >
-                add delivery hub
-              </button>
+              <button onClick={() => {}}>Add Delivery Hub</button>
             </div>
           </form>
-
           <form className="" noValidate autoComplete="off">
             <div className="">
               <input
-                id="customerRole"
-                label=" Enter Customer Address"
-                variant="outlined"
-                value={customerRole}
-                onChange={(e) => setCustomerRole(e.target.value)}
-                style={{ width: "70%" }}
+                id="manufacturerRole"
+                type="text"
+                placeholder="Enter Customer Address"
+                // value={manufacturerRole}
+                onChange={(e) => console.log(e.target.value)}
+                className="border border-gray-700"
               />
-              <button
-                variant="contained"
-                color="primary"
-                onClick={handleAddCustomerRole}
-                style={{ width: "30%", marginLeft: "10px" }}
-              >
-                add customer
-              </button>
+              <button onClick={() => {}}>Add Customer</button>
             </div>
           </form>
         </div>
-        <div className="">
+        {/* <div className="">
           <h1 className="">Local Accounts</h1>
           {accounts.slice(1).map((acc) => (
             <h3 className="">{acc}</h3>
           ))}
-        </div>
+        </div> */}
       </div>
       {/* <ResponsiveDrawer navItems={navItem}>
         <div className={classes.FormWrap}>
