@@ -6,6 +6,8 @@ export const useStyles = makeStyles({
   pageWrap: {
     textAlign: 'center',
     color: '#000',
+    background:"linear-gradient"
+    // backgroundColor:"black"
   },
   pageHeading: {
     textAlign: 'center',
@@ -153,9 +155,9 @@ export const useStyles = makeStyles({
     maxWidth: 500,
     width: '90%',
     padding: 20,
-    borderRadius: 10,
-    
-    boxShadow: '2px 2px 75px #000',
+    borderRadius: 50,
+    // backgroundColor:"black",
+    boxShadow: '2px 2px 20px #000',
     border: '2px solid #000',
     margin: '10px auto',
   },

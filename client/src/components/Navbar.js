@@ -18,7 +18,7 @@ import ListItemText from '@material-ui/core/ListItemText';
 import { Link } from 'react-router-dom';
 import GitHubIcon from '@material-ui/icons/GitHub';
 
-const drawerWidth = 250;
+const drawerWidth = 240;
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -31,7 +31,7 @@ const useStyles = makeStyles((theme) => ({
     }),
   },
   appBarShift: {
-    width: "100%",
+    width: `calc(100% - ${drawerWidth}px)`,
     marginLeft: drawerWidth,
     transition: theme.transitions.create(['margin', 'width'], {
       easing: theme.transitions.easing.easeOut,
@@ -129,7 +129,7 @@ export default function PersistentDrawerLeft({
       <Drawer
         className={classes.drawer}
         variant="persistent"
-        anchor="right"
+        anchor="left"
         open={open}
         classes={{
           paper: classes.drawerPaper,
