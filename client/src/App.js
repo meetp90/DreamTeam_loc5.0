@@ -4,7 +4,7 @@ import RoleAdmin from "./pages/RoleAdmin";
 
 function App() {
   return (
-    <h1 className="text-xl font-bold">
+    <h1>
       <BrowserRouter>
         {/* <Header /> */}
         <Routes>
