@@ -3,12 +3,13 @@ import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
 import RoleAdmin from "./pages/RoleAdmin";
 import Roles from "./pages/Roles";
 import Manufacture from "./pages/manufacture/Manufacture";
+import Navbar from "./component/Navbar";
 
 function App() {
   return (
-    <h1 className="">
+    <h1 className="font-baskerville">
       <BrowserRouter>
-        {/* <Header /> */}
+        <Navbar />
         <Routes>
           <Route exact path="/" element={<Home />} />
           <Route path="/roleAdmin" element={<RoleAdmin />} />
