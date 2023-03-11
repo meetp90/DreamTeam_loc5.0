@@ -116,7 +116,7 @@ export default function PersistentDrawerLeft({
           <Typography
             variant="h6"
             noWrap
-            style={{ display: 'flex', alignItems: 'center', color: 'black' }}>
+            style={{ display: 'flex', alignItems: 'center', color: 'white' }}>
             {/* <img
               alt="."
               src="/logo.png"
