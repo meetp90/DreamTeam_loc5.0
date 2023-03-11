@@ -50,7 +50,7 @@ const useStyles = makeStyles((theme) => ({
   },
   drawerPaper: {
     width: drawerWidth,
-    backgroundColor: "#000",
+    backgroundColor: "#023",
     color: "#fff",
   },
   drawerHeader: {
@@ -60,6 +60,7 @@ const useStyles = makeStyles((theme) => ({
     // necessary for content to be below app bar
     ...theme.mixins.toolbar,
     justifyContent: "flex-end",
+    // fontSize: "10px",
   },
   content: {
     flexGrow: 1,
@@ -69,6 +70,7 @@ const useStyles = makeStyles((theme) => ({
       duration: theme.transitions.duration.leavingScreen,
     }),
     marginLeft: -drawerWidth,
+    // fontSize: "20px",
   },
   contentShift: {
     transition: theme.transitions.create("margin", {
@@ -118,13 +120,20 @@ export default function PersistentDrawerLeft({
           <Typography
             variant="h6"
             noWrap
-            style={{ display: 'flex', alignItems: 'center', color: 'white' }}>
+            style={{
+              display: "flex",
+              alignItems: "center",
+              color: "white",
+              fontSize: "40px",
+              padding: "10px 20px",
+            }}
+          >
             {/* <img
               alt="."
               src="/logo.png"
               style={{ height: '45px', width: 'auto' }}
             /> */}
-            &nbsp;DecentSupply
+            &nbsp;DecentSupply.
           </Typography>
         </Toolbar>
       </AppBar>
@@ -153,7 +162,15 @@ export default function PersistentDrawerLeft({
           </IconButton>
         </div>
         <List>
-          <Link to="/" style={{ textDecoration: "none", color: "#fff" }}>
+          <Link
+            to="/"
+            style={{
+              textDecoration: "none",
+              color: "#fff",
+              fontFamily: "Libre Baskerville",
+              fontSize: "130px",
+            }}
+          >
             <ListItem>
               <ListItemText>Home</ListItemText>
             </ListItem>
