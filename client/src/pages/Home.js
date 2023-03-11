@@ -30,27 +30,7 @@ export default function Home() {
                 justifyContent: 'center',
                 alignItems: 'center',
                 flexWrap: 'wrap',
-              }}>
-              {/* <img
-                alt="."
-                src="/homeArt.png"
-                style={{ width: "90%", height: "auto" }}
-              /> */}
-            </Grid>
-
-            <Grid
-              item
-              xs={12}
-              sm={6}
-              style={{
-                minHeight: '100%',
-                width: '100%',
-                display: 'flex',
-                justifyContent: 'center',
-                alignItems: 'center',
-                flexWrap: 'wrap',
                 flexDirection: 'column',
-                boxShadow: 'rgb(204, 219, 232) 3px 3px 6px 0px inset',
               }}>
               <div className={classes.HomeCardWrap}>
                 <h1 className={classes.pageHeading}>Assign Roles</h1>
@@ -67,7 +47,7 @@ export default function Home() {
                 </Link>
                 <br />
 
-                <h1 className={classes.pageHeading}>Visit As</h1>
+                {/* <h1 className={classes.pageHeading}>Visit As</h1>
                 <Link
                   to="/manufacturer/manufacture"
                   style={{ textDecoration: 'none', color: '#fff' }}>
@@ -110,8 +90,26 @@ export default function Home() {
                     style={{ color: 'gold' }}>
                     customer
                   </Button>
-                </Link>
+                </Link> */}
               </div>
+            </Grid>
+            <Grid
+              item
+              xs={12}
+              sm={6}
+              style={{
+                minHeight: '100%',
+                width: '100%',
+                display: 'flex',
+                justifyContent: 'center',
+                alignItems: 'center',
+                flexWrap: 'wrap',
+              }}>
+              {/* <img
+                alt="."
+                src="/homeArt.png"
+                style={{ width: "90%", height: "auto" }}
+              /> */}
             </Grid>
           </Grid>
         </Navbar>

@@ -154,8 +154,8 @@ export const useStyles = makeStyles({
     width: '90%',
     padding: 20,
     borderRadius: 10,
-    boxShadow: 'rgb(204, 219, 232) 3px 3px 6px 0px inset',
-    // boxShadow: '2px 2px 10px #9fa8da',
+    
+    boxShadow: '2px 2px 75px #000',
     border: '2px solid #000',
     margin: '10px auto',
   },
