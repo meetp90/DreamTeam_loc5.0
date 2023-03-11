@@ -178,7 +178,7 @@ contract SupplyChain {
         product.productdet.productCategory = productCategory;
     }
 
-    ///@dev STEP 1 : Manufactured a product.
+    
     function manufactureProduct(
         string memory manufacturerName,
         string memory manufacturerDetails,
@@ -235,7 +235,6 @@ contract SupplyChain {
         emit PurchasedByThirdParty(_uid);
     }
 
-    ///@dev STEP 3 : Shipping of purchased product to Third Party.
     function shipToThirdParty(uint256 _uid)
         public
         verifyAddress(products[_uid].manufacturer.manufacturer)
@@ -247,7 +246,7 @@ contract SupplyChain {
         emit ShippedByManufacturer(_uid);
     }
 
-    ///@dev STEP 4 : Received the purchased product shipped by Manufacturer.
+
     function receiveByThirdParty(
         uint256 _uid,
         string memory thirdPartyLongitude,
@@ -267,7 +266,7 @@ contract SupplyChain {
         emit ReceivedByThirdParty(_uid);
     }
 
-    ///@dev STEP 5 : Purchase of a product at third party by Customer.
+    
     function purchaseByCustomer(uint256 _uid)
         public
         receivedByThirdParty(_uid)
@@ -280,7 +279,6 @@ contract SupplyChain {
         emit PurchasedByCustomer(_uid);
     }
 
-    ///@dev STEP 7 : Shipping of product by third party purchased by customer.
     function shipByThirdParty(uint256 _uid)
         public
         verifyAddress(products[_uid].owner)
