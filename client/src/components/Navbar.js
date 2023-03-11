@@ -1,3 +1,5 @@
+/** @format */
+
 import React from "react";
 import clsx from "clsx";
 import { makeStyles, useTheme } from "@material-ui/core/styles";
@@ -16,7 +18,7 @@ import ListItemText from "@material-ui/core/ListItemText";
 import { Link } from "react-router-dom";
 import GitHubIcon from "@material-ui/icons/GitHub";
 
-const drawerWidth = 240;
+const drawerWidth = 250;
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -29,7 +31,7 @@ const useStyles = makeStyles((theme) => ({
     }),
   },
   appBarShift: {
-    width: `calc(100% - ${drawerWidth}px)`,
+    width: "100%",
     marginLeft: drawerWidth,
     transition: theme.transitions.create(["margin", "width"], {
       easing: theme.transitions.easing.easeOut,
@@ -116,27 +118,30 @@ export default function PersistentDrawerLeft({
           <Typography
             variant="h6"
             noWrap
-            style={{ display: "flex", alignItems: "center" }}
+            style={{ display: "flex", alignItems: "center", color: "black" }}
           >
-            <img
+            {/* <img
               alt="."
               src="/logo.png"
-              style={{ height: "45px", width: "auto" }}
-            />
-            &nbsp;SupplyChain-Dapp
+              style={{ height: '45px', width: 'auto' }}
+            /> */}
+            &nbsp;DecentSupply
           </Typography>
         </Toolbar>
       </AppBar>
       <Drawer
         className={classes.drawer}
         variant="persistent"
-        anchor="left"
+        anchor="right"
         open={open}
         classes={{
           paper: classes.drawerPaper,
         }}
       >
         <div className={classes.drawerHeader}>
+          <ListItemText>
+            <b>{pageTitle}</b>
+          </ListItemText>
           <ListItemText>
             <b>{pageTitle}</b>
           </ListItemText>
@@ -201,7 +206,8 @@ export default function PersistentDrawerLeft({
             >
               <GitHubIcon style={{ color: "#fff" }} />
             </a>
-          </div> */}
+          </div>{" "}
+          */}
         </div>
       </Drawer>
       <main

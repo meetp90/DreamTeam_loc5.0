@@ -103,6 +103,7 @@ export default function Manufacture(props) {
                             <h1 className={classes.pageHeading}>Add Product</h1>
                             <Grid container spacing={3}>
                                 <Grid item xs={12}>
+                                
                                     <TextField
                                         required
                                         name="manufacturerName"
@@ -190,9 +191,20 @@ export default function Manufacture(props) {
                                         style={{ width: "100%" }}
                                     />
                                 </Grid>
+                                <Button
+                                    variant="contained"
+                                    component="label"
+                                    >
+                                    Upload File
+                                    <input
+                                        type="file"
+                                        hidden
+                                    />
+                                    </Button>
                             </Grid>
                             <br />
                             <p><b style={{ color: "red" }}>{fvalid ? "Please enter all data" : ""}</b></p>
+
                             <Button
                                 type="submit"
                                 variant="contained"

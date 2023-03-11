@@ -1,3 +1,5 @@
+/** @format */
+
 import { makeStyles } from "@material-ui/core/styles";
 
 export const useStyles = makeStyles({
@@ -17,7 +19,7 @@ export const useStyles = makeStyles({
     width: "100%",
     maxWidth: 1200,
     margin: "5px auto",
-    border: "2px solid #1a237e",
+    border: "2px solid #000",
     borderRadius: 10,
     boxShadow: "2px 2px 10px #9fa8da",
   },
@@ -34,14 +36,14 @@ export const useStyles = makeStyles({
     textAlign: "center",
     margin: "10px auto",
     padding: 0,
-    color: "#1a237e",
+    color: "#000",
   },
   TableHead: {
-    backgroundColor: "#1a237e !important",
+    backgroundColor: "#000 !important",
     color: "#fff !important",
   },
   TableCell: {
-    color: "#1a237e !important",
+    color: "#000 !important",
   },
 
   FormWrap: {
@@ -68,7 +70,7 @@ export const useStyles = makeStyles({
     padding: 10,
     borderRadius: 10,
     boxShadow: "2px 2px 10px #9fa8da",
-    border: "2px solid #1a237e",
+    border: "2px solid #000",
   },
   ExplorerdRow: {
     width: "100%",
@@ -79,13 +81,13 @@ export const useStyles = makeStyles({
     padding: 5,
     margin: "0 auto",
     fontWeight: 600,
-    color: "#1a237e",
+    color: "#000",
   },
   TableRoot2: {
     width: "100%",
     maxWidth: 1300,
     margin: "5px auto",
-    border: "2px solid #1a237e",
+    border: "2px solid #000",
     borderRadius: 10,
     boxShadow: "2px 2px 10px #9fa8da",
   },
@@ -102,7 +104,7 @@ export const useStyles = makeStyles({
     outline: "none",
     width: "min(90%, 650px)",
     height: "80%",
-    border: "2px solid #1a237e",
+    border: "2px solid #000",
     borderRadius: 10,
     boxShadow: "2px 2px 10px #9fa8da",
     overflow: "scroll",
@@ -114,7 +116,7 @@ export const useStyles = makeStyles({
     outline: "none",
     width: "min(95%, 950px)",
     height: "500px",
-    border: "2px solid #1a237e",
+    border: "2px solid #000",
     borderRadius: 10,
     boxShadow: "2px 2px 10px #9fa8da",
     overflow: "scroll",
@@ -133,13 +135,13 @@ export const useStyles = makeStyles({
     width: "30%",
     textAlign: "left",
     fontWeight: 600,
-    color: "#1a237e",
+    color: "#000",
   },
   dCol2: {
     width: "70%",
     textAlign: "left",
     fontWeight: 600,
-    color: "#1a237e",
+    color: "#000",
     overflow: "hidden",
     textOverflow: "ellipsis",
   },
@@ -153,8 +155,9 @@ export const useStyles = makeStyles({
     width: "90%",
     padding: 20,
     borderRadius: 10,
-    boxShadow: "2px 2px 10px #9fa8da",
-    border: "2px solid #1a237e",
+
+    boxShadow: "2px 2px 75px #000",
+    border: "2px solid #000",
     margin: "10px auto",
   },
 });
