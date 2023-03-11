@@ -30,6 +30,24 @@ export default function Home() {
                 justifyContent: 'center',
                 alignItems: 'center',
                 flexWrap: 'wrap',
+              }}>
+              {/* <img
+                alt="."
+                src="/homeArt.png"
+                style={{ width: "90%", height: "auto" }}
+              /> */}
+            </Grid>
+            <Grid
+              item
+              xs={12}
+              sm={6}
+              style={{
+                minHeight: '100%',
+                width: '100%',
+                display: 'flex',
+                justifyContent: 'center',
+                alignItems: 'center',
+                flexWrap: 'wrap',
                 flexDirection: 'column',
               }}>
               <div className={classes.HomeCardWrap}>
@@ -46,8 +64,7 @@ export default function Home() {
                   </Button>
                 </Link>
                 <br />
-
-                {/* <h1 className={classes.pageHeading}>Visit As</h1>
+                <h1 className={classes.pageHeading}>Visit As</h1>
                 <Link
                   to="/manufacturer/manufacture"
                   style={{ textDecoration: 'none', color: '#fff' }}>
@@ -90,26 +107,8 @@ export default function Home() {
                     style={{ color: 'gold' }}>
                     customer
                   </Button>
-                </Link> */}
+                </Link>
               </div>
-            </Grid>
-            <Grid
-              item
-              xs={12}
-              sm={6}
-              style={{
-                minHeight: '100%',
-                width: '100%',
-                display: 'flex',
-                justifyContent: 'center',
-                alignItems: 'center',
-                flexWrap: 'wrap',
-              }}>
-              {/* <img
-                alt="."
-                src="/homeArt.png"
-                style={{ width: "90%", height: "auto" }}
-              /> */}
             </Grid>
           </Grid>
         </Navbar>
