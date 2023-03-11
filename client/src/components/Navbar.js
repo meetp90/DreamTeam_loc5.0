@@ -48,7 +48,7 @@ const useStyles = makeStyles((theme) => ({
   },
   drawerPaper: {
     width: drawerWidth,
-    backgroundColor: "#09126d",
+    backgroundColor: "#000",
     color: "#fff",
   },
   drawerHeader: {
@@ -77,7 +77,11 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export default function PersistentDrawerLeft({ pageTitle,navItems, children }) {
+export default function PersistentDrawerLeft({
+  pageTitle,
+  navItems,
+  children,
+}) {
   const classes = useStyles();
   const theme = useTheme();
   const [open, setOpen] = React.useState(true);
@@ -99,7 +103,7 @@ export default function PersistentDrawerLeft({ pageTitle,navItems, children }) {
           [classes.appBarShift]: open,
         })}
       >
-        <Toolbar>
+        <Toolbar style={{ backgroundColor: "#000" }}>
           <IconButton
             color="inherit"
             aria-label="open drawer"
@@ -133,7 +137,9 @@ export default function PersistentDrawerLeft({ pageTitle,navItems, children }) {
         }}
       >
         <div className={classes.drawerHeader}>
-        <ListItemText><b>{pageTitle}</b></ListItemText>
+          <ListItemText>
+            <b>{pageTitle}</b>
+          </ListItemText>
           <IconButton onClick={handleDrawerClose}>
             {theme.direction === "ltr" ? (
               <ChevronLeftIcon style={{ color: "#fff" }} />
@@ -176,7 +182,7 @@ export default function PersistentDrawerLeft({ pageTitle,navItems, children }) {
         <div
           style={{ height: "100%", display: "flex", alignItems: "flex-end" }}
         >
-          <div
+          {/* <div
             style={{
               width: "100%",
               height: "70px",
@@ -185,17 +191,17 @@ export default function PersistentDrawerLeft({ pageTitle,navItems, children }) {
               alignItems: "center",
               fontWeight: 500,
               fontSize: 17,
-              borderTop: "1px solid #44a",
+              borderTop: "1px solid orange",
             }}
           >
-            By Team Akatsuki &nbsp;&nbsp;
+            By Dream Team &nbsp;&nbsp;
             <a
               style={{ textDecoration: "none" }}
               href="https://github.com/rishav4101/eth-supplychain-dapp"
             >
               <GitHubIcon style={{ color: "#fff" }} />
             </a>
-          </div>
+          </div> */}
         </div>
       </Drawer>
       <main
