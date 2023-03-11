@@ -6,6 +6,7 @@ export const useStyles = makeStyles({
   pageWrap: {
     textAlign: "center",
     color: "#000",
+    
   },
   paper: {
     textAlign: 'center',

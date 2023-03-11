@@ -216,7 +216,7 @@ export default function PersistentDrawerLeft({
         })}
       >
         <div className={classes.drawerHeader} />
-        <div style={{ margin: "0 auto", maxWidth: 1300 }}>{children}</div>
+        <div style={{ maxWidth: 1300 }}>{children}</div>
       </main>
     </div>
   );
