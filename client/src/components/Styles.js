@@ -8,6 +8,9 @@ export const useStyles = makeStyles({
     color: "#000",
     // backgroundImage: "url('hero.jpg')",
   },
+  paper: {
+    textAlign: 'center',
+  },
   pageHeading: {
     textAlign: "center",
     margin: "10px auto",
@@ -15,7 +18,9 @@ export const useStyles = makeStyles({
     color: "#000",
     fontFamily: "Libre Baskerville",
   },
-
+  media: {
+    height: 140,
+  },
   TableRoot: {
     width: "100%",
     maxWidth: 1200,
