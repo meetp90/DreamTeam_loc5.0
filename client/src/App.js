@@ -6,7 +6,7 @@ import Roles from "./pages/Roles";
 function App() {
   return (
     <h1 className="">
-    <h1 className="text-xl font-bold">
+    
       <BrowserRouter>
         {/* <Header /> */}
         <Routes>
