@@ -6,6 +6,7 @@ export const useStyles = makeStyles({
   pageWrap: {
     textAlign: "center",
     color: "#000",
+    // backgroundImage: "url('hero.jpg')",
   },
   pageHeading: {
     textAlign: "center",
@@ -149,14 +150,20 @@ export const useStyles = makeStyles({
   //Home
   HomeBtn: {
     margin: 10,
+    color: "white",
+    backgroundColor: "black",
+    fontWeight: "semibold",
+    fontSize: "20px",
+    borderRadius: "0",
+    fontFamily: "Libre Baskille",
   },
   HomeCardWrap: {
     maxWidth: 500,
     width: "90%",
     padding: 20,
-    borderRadius: 50,
-    // backgroundColor:"black",
-    boxShadow: "2px 2px 20px #000",
+    borderRadius: 0,
+    backgroundColor: "white",
+    boxShadow: "1px 1px 10px #000",
     border: "2px solid #000",
     margin: "10px auto",
   },
