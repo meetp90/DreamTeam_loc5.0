@@ -5,13 +5,18 @@ export const useStyles = makeStyles({
     textAlign: "center",
     color: "#1a237e",
   },
+  paper: {
+    textAlign: 'center',
+  },
   pageHeading: {
     textAlign: "center",
     margin: "10px auto",
     padding: 0,
     color: "#1a237e",
   },
-
+  media: {
+    height: 140,
+  },
   TableRoot: {
     width: "100%",
     maxWidth: 1200,
