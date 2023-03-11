@@ -83,7 +83,7 @@ export default function Home() {
                     size="large"
                     variant="outlined"
                     style={{ color: 'gold' }}>
-                    Third party
+                    Distributor
                   </Button>
                 </Link>
                 <Link
@@ -94,7 +94,7 @@ export default function Home() {
                     size="large"
                     variant="outlined"
                     style={{ color: 'gold' }}>
-                    delivery hub
+                    BlockDart
                   </Button>
                 </Link>
                 <Link

@@ -24,10 +24,9 @@ function RoleAdmin(props) {
     });
 
     localStorage.setItem("mRole", manufacturerRole);
-    await supplyChainContract.methods
-      .addManufacturerRole(manufacturerRole)
-      .send({ from: accounts[0], gas: 100000 })
-      .then(console.log);
+ await supplyChainContract.methods
+   .addManufacturerRole(manufacturerRole)
+   .send({ from: accounts[0], gas: 100000 });
 
     setManufacturerRole("");
   };
