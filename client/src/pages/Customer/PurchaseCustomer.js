@@ -14,14 +14,14 @@ import { useStyles } from "../../components/Styles";
 import ProductModal from "../../components/Modal";
 import clsx from "clsx";
 import Loader from "../../components/Loader";
-import Card from '@material-ui/core/Card';
-import CardActionArea from '@material-ui/core/CardActionArea';
-import CardActions from '@material-ui/core/CardActions';
-import CardContent from '@material-ui/core/CardContent';
-import CardMedia from '@material-ui/core/CardMedia';
-import Typography from '@material-ui/core/Typography';
-import { img1 } from '../../images/web3.jpg';
-import Grid from '@material-ui/core/Grid';
+import Card from "@material-ui/core/Card";
+import CardActionArea from "@material-ui/core/CardActionArea";
+import CardActions from "@material-ui/core/CardActions";
+import CardContent from "@material-ui/core/CardContent";
+import CardMedia from "@material-ui/core/CardMedia";
+import Typography from "@material-ui/core/Typography";
+import { img1 } from "../../images/web3.jpg";
+import Grid from "@material-ui/core/Grid";
 export default function PurchaseCustomer(props) {
   const classes = useStyles();
   const supplyChainContract = props.supplyChainContract;
@@ -110,9 +110,7 @@ export default function PurchaseCustomer(props) {
   return (
     <>
       <div classname={classes.pageWrap}>
-        <Navbar
-          pageTitle={'Customer'}
-          navItems={navItem}>
+        <Navbar pageTitle={"Customer"} navItems={navItem}>
           {loading ? (
             <Loader />
           ) : (
@@ -134,9 +132,7 @@ export default function PurchaseCustomer(props) {
                     const d = new Date(parseInt(prod[1][0] * 1000));
                     return (
                       <>
-                        <Grid
-                          container
-                          spacing={3}>
+                        <Grid container spacing={3}>
                           {allProducts.length !== 0 ? (
                             allProducts.map((prod) => {
                               const d = new Date(parseInt(prod[1][0] * 1000));
@@ -144,13 +140,14 @@ export default function PurchaseCustomer(props) {
                                 <Grid
                                   item
                                   xs={4}
-                                  onClick={() => handleClick(prod)}>
+                                  onClick={() => handleClick(prod)}
+                                >
                                   <Card className={classes.root}>
                                     <CardActionArea>
                                       <CardMedia
                                         style={{
-                                          height: '250px',
-                                          paddingTop: '2%',
+                                          height: "250px",
+                                          paddingTop: "2%",
                                         }}
                                         component="img"
                                         image={`https://ipfs.io/ipfs/${prod[0][8]}`}
@@ -161,48 +158,55 @@ export default function PurchaseCustomer(props) {
                                         <Typography
                                           gutterBottom
                                           variant="h5"
-                                          component="h2">
+                                          component="h2"
+                                        >
                                           {prod[1][1]}
                                         </Typography>
                                         <Typography
                                           variant="body2"
                                           color="textSecondary"
-                                          component="p">
+                                          component="p"
+                                        >
                                           Product Code: {prod[1][2]}
                                         </Typography>
                                         <Typography
                                           variant="body2"
                                           color="textSecondary"
-                                          component="p">
+                                          component="p"
+                                        >
                                           Manufacturer: {prod[0][4]}
                                         </Typography>
                                         <Typography
                                           variant="body2"
                                           color="textSecondary"
-                                          component="p">
+                                          component="p"
+                                        >
                                           Owner: {prod[0][2]}
                                         </Typography>
                                         <Typography
                                           variant="body2"
                                           color="textSecondary"
-                                          component="p">
+                                          component="p"
+                                        >
                                           Date: {d.toDateString()}
                                         </Typography>
                                       </CardContent>
                                     </CardActionArea>
                                     <CardActions
                                       style={{
-                                        display: 'flex',
-                                        alignItems: 'center',
-                                        justifyContent: 'center',
-                                      }}>
+                                        display: "flex",
+                                        alignItems: "center",
+                                        justifyContent: "center",
+                                      }}
+                                    >
                                       <Button
                                         type="submit"
                                         variant="contained"
-                                        color="primary"
+                                        color="#000"
                                         onClick={() =>
                                           handleBuyButton(prod[0][0])
-                                        }>
+                                        }
+                                      >
                                         BUY
                                       </Button>
                                     </CardActions>

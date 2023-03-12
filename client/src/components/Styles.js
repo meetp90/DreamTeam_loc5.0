@@ -17,7 +17,7 @@ export const useStyles = makeStyles({
   pageHeading: {
     textAlign: "center",
     margin: "15px auto",
-    paddingTop: "10px",
+    paddingTop: "40px",
     color: "#a57b44",
     // fontFamily: "Libre Baskerville",
     fontFamily: "Poppins",
@@ -31,7 +31,7 @@ export const useStyles = makeStyles({
     margin: "5px auto",
     border: "2px solid #000",
     borderRadius: 10,
-    boxShadow: "2px 2px 10px #9fa8da",
+    boxShadow: "2px 2px 10px #a57b44",
   },
   TableContainer: {
     maxHeight: 600,
@@ -61,7 +61,7 @@ export const useStyles = makeStyles({
     margin: "30px auto",
     padding: 20,
     borderRadius: 10,
-    boxShadow: "2px 2px 10px #9fa8da",
+    boxShadow: "2px 2px 10px #a57b44",
   },
 
   RoleForm: {
@@ -79,7 +79,7 @@ export const useStyles = makeStyles({
   ProductPaper: {
     padding: 10,
     // borderRadius: 10,
-    // boxShadow: "2px 2px 10px #9fa8da",
+    // boxShadow: "2px 2px 10px #a57b44",
     border: "2px solid #000",
   },
   ExplorerdRow: {
@@ -99,7 +99,7 @@ export const useStyles = makeStyles({
     margin: "5px auto",
     border: "2px solid #000",
     borderRadius: 10,
-    boxShadow: "2px 2px 10px #9fa8da",
+    boxShadow: "2px 2px 10px #a57b44",
   },
 
   //Modal
@@ -116,7 +116,7 @@ export const useStyles = makeStyles({
     height: "80%",
     border: "2px solid #000",
     borderRadius: 10,
-    boxShadow: "2px 2px 10px #9fa8da",
+    boxShadow: "2px 2px 10px #a57b44",
     overflow: "scroll",
   },
   Reciptpaper: {
@@ -128,7 +128,7 @@ export const useStyles = makeStyles({
     height: "500px",
     border: "2px solid #000",
     borderRadius: 10,
-    boxShadow: "2px 2px 10px #9fa8da",
+    boxShadow: "2px 2px 10px #a57b44",
     overflow: "scroll",
   },
   dRow: {

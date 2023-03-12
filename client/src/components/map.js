@@ -1,16 +1,16 @@
 /** @format */
 
-import React, { Component } from 'react';
-import { Map, GoogleApiWrapper, Marker } from 'google-maps-react';
+import React, { Component } from "react";
+import { Map, GoogleApiWrapper, Marker } from "google-maps-react";
 const mapStyles = {
-  width: '95%',
+  width: "95%",
   // height: '50%',
 
-  borderRadius: '10px',
+  borderRadius: "10px",
   // maxWidth:"400px",
-  height: '350px',
-  zIndex: '10 !important',
-  border: '2px solid #1a237e',
+  height: "350px",
+  zIndex: "10 !important",
+  border: "2px solid #a57b44",
 };
 
 export class MapContainer extends Component {
@@ -56,7 +56,7 @@ export class MapContainer extends Component {
             lat: store.latitude,
             lng: store.longitude,
           }}
-          onClick={() => console.log('You clicked me!')}
+          onClick={() => console.log("You clicked me!")}
         />
       );
     });
@@ -68,7 +68,8 @@ export class MapContainer extends Component {
         google={this.props.google}
         zoom={8}
         style={mapStyles}
-        initialCenter={{ lat: 22.572, lng: 88.363 }}>
+        initialCenter={{ lat: 22.572, lng: 88.363 }}
+      >
         {this.displayMarkers()}
       </Map>
     );
@@ -76,5 +77,5 @@ export class MapContainer extends Component {
 }
 
 MapContainer = GoogleApiWrapper({
-  apiKey: 'AIzaSyDNWGm_Zo0ao9BBaIDIO950-hz4taDnoIc',
+  apiKey: "AIzaSyDNWGm_Zo0ao9BBaIDIO950-hz4taDnoIc",
 })(MapContainer);
