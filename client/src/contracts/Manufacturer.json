@@ -2403,14 +2403,41 @@
       "transactionHash": "0xb9b6effe9cc0331ef1fca9eee8d8631aff89260c3efdf8cc60f5648d511858a9"
     },
     "1678582914695": {
-      "events": {},
+      "events": {
+        "0x561138658ca49a8540dc70dcfe64c9026c1c5b9344642242dd6562970f9c1278": {
+          "anonymous": false,
+          "inputs": [
+            {
+              "indexed": true,
+              "internalType": "address",
+              "name": "_account",
+              "type": "address"
+            }
+          ],
+          "name": "ManufacturerAdded",
+          "type": "event"
+        },
+        "0x2fed5abf6a80d6dfe30b4895481b2fc5d7dce5f8f7b931832f4a2947d5040c7f": {
+          "anonymous": false,
+          "inputs": [
+            {
+              "indexed": true,
+              "internalType": "address",
+              "name": "_account",
+              "type": "address"
+            }
+          ],
+          "name": "ManufacturerRemoved",
+          "type": "event"
+        }
+      },
       "links": {},
-      "address": "0x756C251CCc844B0cdB8a8a013a2C6340B572A3Dd",
-      "transactionHash": "0x9c9a0310ee4997e4b3128bb0a5cf08d1b1521e46d20990d0a27b195a98cb4281"
+      "address": "0x4474806876F63a218F1dA5c578d8f735aa914e67",
+      "transactionHash": "0x92d4e87a11c694b40b61bff7ad6f6d99db7d93c7845b985c60b9fa6ba77b701e"
     }
   },
   "schemaVersion": "3.4.11",
-  "updatedAt": "2023-03-12T01:06:11.359Z",
+  "updatedAt": "2023-03-12T05:01:53.983Z",
   "networkType": "ethereum",
   "devdoc": {
     "methods": {
