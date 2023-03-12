@@ -21,7 +21,7 @@ export default function ReciptModal({ recipt, openRecipt, handleCloseRecipt }) {
     >
       <Fade in={openRecipt}>
         <div className={classes.Reciptpaper}>
-          <h1 className={classes.pageHeading}>Recipt</h1>
+          <h1 className={classes.pageHeading}>Receipt</h1>
           <div>
             {recipt !== null ? (
               <>
