@@ -72,8 +72,7 @@ export default function Manufacture(props) {
     productCode: 0,
     productPrice: 0,
     productCategory: "",
-   images:""
-
+   image:""
   });
 
   const handleChangeManufacturerForm = async (e) => {
@@ -101,6 +100,10 @@ export default function Manufacture(props) {
       },
     ]);
     console.log(images)
+    setManuForm({
+      ...manuForm,
+      image: result.path,
+    });
     // form.reset();
   };
   const handleSubmitManufacturerForm = async () => {
@@ -117,6 +120,7 @@ export default function Manufacture(props) {
       manuForm.productCategory !== ""
     ) {
       setfvalid(false);
+      console.log(manuForm);
       await supplyChainContract.methods
         .manufactureProduct(
           manuForm.manufacturerName,
@@ -127,10 +131,9 @@ export default function Manufacture(props) {
           parseInt(manuForm.productCode),
           parseInt(manuForm.productPrice),
           manuForm.productCategory,
-          manuForm.images
+          manuForm.image
         )
         .send({ from: roles.manufacturer, gas: 999999 })
-        // .then(console.log)
         .on("transactionHash", function (hash) {
           handleSetTxhash(hash);
         });
@@ -144,7 +147,7 @@ export default function Manufacture(props) {
         productCode: 0,
         productPrice: 0,
         productCategory: "",
-        images:""
+        image:""
       });
     } else {
       setfvalid(true);

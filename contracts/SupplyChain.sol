@@ -230,7 +230,6 @@ contract SupplyChain {
         emit Manufactured(_uid);
     }
 
-    ///@dev STEP 2 : Purchase of manufactured product by Third Party.
     function purchaseByThirdParty(uint256 _uid) public manufactured(_uid) {
         require(hasThirdPartyRole(msg.sender));
         products[_uid].thirdparty.thirdParty = msg.sender;
@@ -357,6 +356,7 @@ contract SupplyChain {
             string memory,
             string memory,
             string memory,
+            string memory,
             string memory
         )
     {
@@ -376,7 +376,8 @@ contract SupplyChain {
             product.manufacturer.manufacturerName,
             product.manufacturer.manufacturerDetails,
             product.manufacturer.manufacturerLongitude,
-            product.manufacturer.manufacturerLatitude
+            product.manufacturer.manufacturerLatitude,
+            product.image
         );
     }
 
