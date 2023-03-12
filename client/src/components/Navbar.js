@@ -52,7 +52,7 @@ const useStyles = makeStyles((theme) => ({
     width: drawerWidth,
     backgroundColor: "#000",
     // backgroundColor: "#292826",
-    opacity: "0.9",
+    opacity: "0.6",
     color: "#000",
   },
   drawerHeader: {
@@ -183,7 +183,7 @@ export default function PersistentDrawerLeft({
                 <span
                   style={{
                     color: "white",
-                    fontSize: "25px",
+                    fontSize: "20px",
                   }}
                 >
                   Home
@@ -200,7 +200,7 @@ export default function PersistentDrawerLeft({
                 <span
                   style={{
                     color: "white",
-                    fontSize: "25px",
+                    fontSize: "20px",
                   }}
                 >
                   Product Details
@@ -222,10 +222,10 @@ export default function PersistentDrawerLeft({
                 <span
                   style={{
                     color: "white",
-                    fontSize: "25px",
+                    fontSize: "20px",
                   }}
                 >
-                  Assign
+                  Assign Roles
                 </span>
               </ListItemText>
             </ListItem>

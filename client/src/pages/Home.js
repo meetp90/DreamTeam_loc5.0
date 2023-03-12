@@ -103,7 +103,7 @@ export default function Home() {
                     variant="outlined"
                     style={{}}
                   >
-                    Blockdart
+                    Delivery Portal
                   </Button>
                 </Link>
                 <Link
