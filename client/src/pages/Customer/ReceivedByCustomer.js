@@ -115,69 +115,65 @@ export default function ReceivedByCustomer(props) {
                       const d = new Date(parseInt(prod[1][0] * 1000));
                       return (
                         <>
-                         
-                                  <Grid
-                                    item
-                                    xs={4}
-                                    onClick={() => handleClick(prod)}>
-                                    <Card className={classes.root}>
-                                      <CardActionArea>
-                                        <CardMedia
-                                          style={{
-                                            height: '250px',
-                                            paddingTop: '2%',
-                                          }}
-                                          component="img"
-                                          image={
-                                            'https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885__480.jpg'
-                                          }
-                                          title="Picture"
-                                          alt="pic"
-                                        />
-                                        <CardContent>
-                                          <Typography
-                                            gutterBottom
-                                            variant="h5"
-                                            component="h2">
-                                            {prod[1][1]}
-                                          </Typography>
-                                          <Typography
-                                            variant="body2"
-                                            color="textSecondary"
-                                            component="p">
-                                            Product Code: {prod[1][2]}
-                                          </Typography>
-                                          <Typography
-                                            variant="body2"
-                                            color="textSecondary"
-                                            component="p">
-                                            Manufacturer: {prod[0][4]}
-                                          </Typography>
-                                          <Typography
-                                            variant="body2"
-                                            color="textSecondary"
-                                            component="p">
-                                            Owner: {prod[0][2]}
-                                          </Typography>
-                                          <Typography
-                                            variant="body2"
-                                            color="textSecondary"
-                                            component="p">
-                                            Date: {d.toDateString()}
-                                          </Typography>
-                                        </CardContent>
-                                      </CardActionArea>
-                                      <CardActions
-                                        style={{
-                                          display: 'flex',
-                                          alignItems: 'center',
-                                          justifyContent: 'center',
-                                        }}></CardActions>
-                                    </Card>
-                                  </Grid>
-                             
-                         
-                     </>)
+                          <Grid
+                            item
+                            xs={4}
+                            onClick={() => handleClick(prod)}>
+                            <Card className={classes.root}>
+                              <CardActionArea>
+                                <CardMedia
+                                  style={{
+                                    height: '250px',
+                                    paddingTop: '2%',
+                                  }}
+                                  component="img"
+                                  image={`https://ipfs.io/ipfs/${prod[0][8]}`}
+                                  title="Picture"
+                                  alt="pic"
+                                />
+                                <CardContent>
+                                  <Typography
+                                    gutterBottom
+                                    variant="h5"
+                                    component="h2">
+                                    {prod[1][1]}
+                                  </Typography>
+                                  <Typography
+                                    variant="body2"
+                                    color="textSecondary"
+                                    component="p">
+                                    Product Code: {prod[1][2]}
+                                  </Typography>
+                                  <Typography
+                                    variant="body2"
+                                    color="textSecondary"
+                                    component="p">
+                                    Manufacturer: {prod[0][4]}
+                                  </Typography>
+                                  <Typography
+                                    variant="body2"
+                                    color="textSecondary"
+                                    component="p">
+                                    Owner: {prod[0][2]}
+                                  </Typography>
+                                  <Typography
+                                    variant="body2"
+                                    color="textSecondary"
+                                    component="p">
+                                    Date: {d.toDateString()}
+                                  </Typography>
+                                </CardContent>
+                              </CardActionArea>
+                              <CardActions
+                                style={{
+                                  display: 'flex',
+                                  alignItems: 'center',
+                                  justifyContent: 'center',
+                                }}></CardActions>
+                            </Card>
+                          </Grid>
+                        </>
+                      );
                     })
                   ) : (
                     <> </>

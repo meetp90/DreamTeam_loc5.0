@@ -177,7 +177,7 @@ contract SupplyChain {
         product.productdet.productCode = productCode;
         product.productdet.productPrice = productPrice;
         product.productdet.productCategory = productCategory;
-        product.productdet.image=image;
+     product.productdet.image=image;
     }
 
     

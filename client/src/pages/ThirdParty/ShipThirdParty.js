@@ -161,9 +161,7 @@ export default function ShipThirdParty(props) {
                                                   paddingTop: '2%',
                                                 }}
                                                 component="img"
-                                                image={
-                                                  'https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885__480.jpg'
-                                                }
+                                                image={`https://ipfs.io/ipfs/${prod[0][8]}`}
                                                 title="Picture"
                                                 alt="pic"
                                               />
@@ -207,15 +205,14 @@ export default function ShipThirdParty(props) {
                                                 justifyContent: 'center',
                                               }}>
                                               <Button
-                                        type="submit"
-                                        variant="contained"
-                                        color="primary"
-                                        onClick={() =>
-                                          handleShipButton(prod[0][0])
-                                        }
-                                      >
-                                        SHIP
-                                      </Button>
+                                                type="submit"
+                                                variant="contained"
+                                                color="primary"
+                                                onClick={() =>
+                                                  handleShipButton(prod[0][0])
+                                                }>
+                                                SHIP
+                                              </Button>
                                             </CardActions>
                                           </Card>
                                         </Grid>
