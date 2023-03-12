@@ -107,26 +107,29 @@ export default function PersistentDrawerLeft({
         position="fixed"
         className={clsx(classes.appBar, {
           [classes.appBarShift]: open,
-        })}>
-        <Toolbar style={{ backgroundColor: '#000000' }}>
+        })}
+      >
+        <Toolbar style={{ backgroundColor: "#000000" }}>
           <IconButton
             color="inherit"
             aria-label="open drawer"
             onClick={handleDrawerOpen}
             edge="start"
-            className={clsx(classes.menuButton, open && classes.hide)}>
+            className={clsx(classes.menuButton, open && classes.hide)}
+          >
             <MenuIcon />
           </IconButton>
           <Typography
             variant="h6"
             noWrap
             style={{
-              display: 'flex',
-              alignItems: 'center',
-              color: 'white',
-              fontSize: '20px',
-              padding: '10px 20px',
-            }}>
+              display: "flex",
+              alignItems: "center",
+              color: "white",
+              fontSize: "20px",
+              padding: "10px 20px",
+            }}
+          >
             <img
               alt="."
               src="/icon-n.png"
@@ -137,7 +140,7 @@ export default function PersistentDrawerLeft({
               src="/logo5.png"
               style={{ height: "75px", width: "100%", padding: "15px 25px" }}
             />
-            
+
             {/* &nbsp;DecentSupply. */}
           </Typography>
         </Toolbar>
@@ -149,15 +152,16 @@ export default function PersistentDrawerLeft({
         open={open}
         classes={{
           paper: classes.drawerPaper,
-        }}>
+        }}
+      >
         <div className={classes.drawerHeader}>
           <ListItemText>
-            <b>{pageTitle}</b>
+            <b style={{ fontSize: "50px" }}>{pageTitle}</b>
           </ListItemText>
 
           <IconButton onClick={handleDrawerClose}>
-            {theme.direction === 'ltr' ? (
-              <ChevronLeftIcon style={{ color: '#fff' }} />
+            {theme.direction === "ltr" ? (
+              <ChevronLeftIcon style={{ color: "#fff" }} />
             ) : (
               <ChevronRightIcon />
             )}
@@ -167,18 +171,20 @@ export default function PersistentDrawerLeft({
           <Link
             to="/"
             style={{
-              textDecoration: 'none',
-              color: '#fff',
-              fontFamily: 'Libre Baskerville',
+              textDecoration: "none",
+              color: "#fff",
+              fontFamily: "Libre Baskerville",
               // fontSize: "130px",
-            }}>
+            }}
+          >
             <ListItem>
               <ListItemText>
                 <span
                   style={{
-                    color: 'white',
-                    fontSize: '25px',
-                  }}>
+                    color: "white",
+                    fontSize: "25px",
+                  }}
+                >
                   Home
                 </span>
               </ListItemText>
@@ -196,7 +202,7 @@ export default function PersistentDrawerLeft({
                     fontSize: "25px",
                   }}
                 >
-                  View Product Details
+                  Product Details
                 </span>
               </ListItemText>
             </ListItem>
@@ -230,12 +236,11 @@ export default function PersistentDrawerLeft({
               <Link
                 to={item[1]}
                 style={{
-                  textDecoration: 'none',
-                  color: '#fff',
-                }}>
-                <ListItem
-                  button
-                  key={item[0]}>
+                  textDecoration: "none",
+                  color: "#fff",
+                }}
+              >
+                <ListItem button key={item[0]}>
                   <ListItemText primary={item[0]} />
                 </ListItem>
               </Link>
@@ -246,15 +251,17 @@ export default function PersistentDrawerLeft({
         </List>
         <div
           style={{
-            height: '100%',
-            display: 'flex',
-            alignItems: 'flex-end',
-          }}></div>
+            height: "100%",
+            display: "flex",
+            alignItems: "flex-end",
+          }}
+        ></div>
       </Drawer>
       <main
         className={clsx(classes.content, {
           [classes.contentShift]: open,
-        })}>
+        })}
+      >
         <div className={classes.drawerHeader} />
         <div style={{ maxWidth: 1300 }}>{children}</div>
       </main>
