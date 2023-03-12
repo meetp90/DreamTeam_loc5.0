@@ -66,20 +66,6 @@ export default function Home() {
               }}
             >
               <div className={classes.HomeCardWrap}>
-                <h1 className={classes.pageHeading}>ASSIGN ROLES</h1>
-                <Link
-                  to="/roleAdmin"
-                  style={{ textDecoration: "none", color: "#fff" }}
-                >
-                  <Button
-                    className={classes.HomeBtn}
-                    size="large"
-                    variant="outlined"
-                    style={{}}
-                  >
-                    Assign
-                  </Button>
-                </Link>
                 <br />
                 <h1 className={classes.pageHeading}>VISIT AS</h1>
                 <Link

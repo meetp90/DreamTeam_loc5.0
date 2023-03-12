@@ -206,6 +206,28 @@ export default function PersistentDrawerLeft({
               </ListItemText>
             </ListItem>
           </Link>
+          <Link
+            to="/roleAdmin"
+            style={{
+              textDecoration: "none",
+              color: "#fff",
+              fontFamily: "Libre Baskerville",
+              // fontSize: "130px",
+            }}
+          >
+            <ListItem>
+              <ListItemText>
+                <span
+                  style={{
+                    color: "white",
+                    fontSize: "25px",
+                  }}
+                >
+                  Assign
+                </span>
+              </ListItemText>
+            </ListItem>
+          </Link>
         </List>
         <List>
           {navItems.length !== 0 ? (
