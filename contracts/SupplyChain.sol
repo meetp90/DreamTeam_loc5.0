@@ -5,71 +5,57 @@ import "./Structure.sol";
 
 contract SupplyChain {
     event ManufacturerAdded(address indexed _account);
-
-    //product code
     uint256 public uid;
     uint256 sku;
-
     address owner;
-
     mapping(uint256 => Structure.Product) products;
     mapping(uint256 => Structure.ProductHistory) productHistory;
     mapping(address => Structure.Roles) roles;
-
     function hasManufacturerRole(address _account) public view returns (bool) {
         require(_account != address(0));
         return roles[_account].Manufacturer;
     }
-
     function addManufacturerRole(address _account) public {
         require(_account != address(0));
         require(!hasManufacturerRole(_account));
 
         roles[_account].Manufacturer = true;
     }
-
     function hasThirdPartyRole(address _account) public view returns (bool) {
         require(_account != address(0));
         return roles[_account].ThirdParty;
     }
-
     function addThirdPartyRole(address _account) public {
         require(_account != address(0));
         require(!hasThirdPartyRole(_account));
 
         roles[_account].ThirdParty = true;
     }
-
     function hasDeliveryHubRole(address _account) public view returns (bool) {
         require(_account != address(0));
         return roles[_account].DeliveryHub;
     }
-
     function addDeliveryHubRole(address _account) public {
         require(_account != address(0));
         require(!hasDeliveryHubRole(_account));
 
         roles[_account].DeliveryHub = true;
     }
-
     function hasCustomerRole(address _account) public view returns (bool) {
         require(_account != address(0));
         return roles[_account].Customer;
     }
-
     function addCustomerRole(address _account) public {
         require(_account != address(0));
         require(!hasDeliveryHubRole(_account));
 
         roles[_account].Customer = true;
     }
-
     constructor() public payable {
         owner = msg.sender;
         sku = 1;
         uid = 1;
     }
-
     event Manufactured(uint256 uid);
     event PurchasedByThirdParty(uint256 uid);
     event ShippedByManufacturer(uint256 uid);
@@ -79,66 +65,56 @@ contract SupplyChain {
     event ReceivedByDeliveryHub(uint256 uid);
     event ShippedByDeliveryHub(uint256 uid);
     event ReceivedByCustomer(uint256 uid);
-
     modifier verifyAddress(address add) {
         require(msg.sender == add);
         _;
     }
-
     modifier manufactured(uint256 _uid) {
         require(products[_uid].productState == Structure.State.Manufactured);
         _;
     }
-
     modifier shippedByManufacturer(uint256 _uid) {
         require(
             products[_uid].productState == Structure.State.ShippedByManufacturer
         );
         _;
     }
-
     modifier receivedByThirdParty(uint256 _uid) {
         require(
             products[_uid].productState == Structure.State.ReceivedByThirdParty
         );
         _;
     }
-
     modifier purchasedByCustomer(uint256 _uid) {
         require(
             products[_uid].productState == Structure.State.PurchasedByCustomer
         );
         _;
     }
-
     modifier shippedByThirdParty(uint256 _uid) {
         require(
             products[_uid].productState == Structure.State.ShippedByThirdParty
         );
         _;
     }
-
     modifier receivedByDeliveryHub(uint256 _uid) {
         require(
             products[_uid].productState == Structure.State.ReceivedByDeliveryHub
         );
         _;
     }
-
     modifier shippedByDeliveryHub(uint256 _uid) {
         require(
             products[_uid].productState == Structure.State.ShippedByDeliveryHub
         );
         _;
     }
-
     modifier receivedByCustomer(uint256 _uid) {
         require(
             products[_uid].productState == Structure.State.ReceivedByCustomer
         );
         _;
     }
-
     function manufactureEmptyInitialize(Structure.Product memory product)
         internal
         pure
@@ -147,24 +123,19 @@ contract SupplyChain {
         string memory transaction;
         string memory thirdPartyLongitude;
         string memory thirdPartyLatitude;
-
         address deliveryHub;
         string memory deliveryHubLongitude;
         string memory deliveryHubLatitude;
         address customer;
-
         product.thirdparty.thirdParty = thirdParty;
         product.thirdparty.thirdPartyLongitude = thirdPartyLongitude;
         product.thirdparty.thirdPartyLatitude = thirdPartyLatitude;
-
         product.deliveryhub.deliveryHub = deliveryHub;
         product.deliveryhub.deliveryHubLongitude = deliveryHubLongitude;
         product.deliveryhub.deliveryHubLatitude = deliveryHubLatitude;
-
         product.customer = customer;
         product.transaction = transaction;
     }
-
     function manufactureProductInitialize(
         Structure.Product memory product,
         string memory productName,
@@ -179,8 +150,6 @@ contract SupplyChain {
         product.productdet.productCategory = productCategory;
      product.productdet.image=image;
     }
-
-    
     function manufactureProduct(
         string memory manufacturerName,
         string memory manufacturerDetails,
@@ -229,7 +198,6 @@ contract SupplyChain {
 
         emit Manufactured(_uid);
     }
-
     function purchaseByThirdParty(uint256 _uid) public manufactured(_uid) {
         require(hasThirdPartyRole(msg.sender));
         products[_uid].thirdparty.thirdParty = msg.sender;
@@ -238,7 +206,6 @@ contract SupplyChain {
 
         emit PurchasedByThirdParty(_uid);
     }
-
     function shipToThirdParty(uint256 _uid)
         public
         verifyAddress(products[_uid].manufacturer.manufacturer)
@@ -249,8 +216,6 @@ contract SupplyChain {
 
         emit ShippedByManufacturer(_uid);
     }
-
-
     function receiveByThirdParty(
         uint256 _uid,
         string memory thirdPartyLongitude,
@@ -269,8 +234,6 @@ contract SupplyChain {
 
         emit ReceivedByThirdParty(_uid);
     }
-
-    
     function purchaseByCustomer(uint256 _uid)
         public
         receivedByThirdParty(_uid)
@@ -282,7 +245,6 @@ contract SupplyChain {
 
         emit PurchasedByCustomer(_uid);
     }
-
     function shipByThirdParty(uint256 _uid)
         public
         verifyAddress(products[_uid].owner)
@@ -294,8 +256,6 @@ contract SupplyChain {
 
         emit ShippedByThirdParty(_uid);
     }
-
-    ///@dev STEP 8 : Receiveing of product by delivery hub purchased by customer.
     function receiveByDeliveryHub(
         uint256 _uid,
         string memory deliveryHubLongitude,
@@ -311,8 +271,6 @@ contract SupplyChain {
 
         emit ReceivedByDeliveryHub(_uid);
     }
-
-    ///@dev STEP 9 : Shipping of product by delivery hub purchased by customer.
     function shipByDeliveryHub(uint256 _uid)
         public
         receivedByDeliveryHub(_uid)
@@ -325,8 +283,6 @@ contract SupplyChain {
 
         emit ShippedByDeliveryHub(_uid);
     }
-
-    ///@dev STEP 10 : Shipping of product by delivery hub purchased by customer.
     function receiveByCustomer(uint256 _uid)
         public
         shippedByDeliveryHub(_uid)
@@ -339,8 +295,6 @@ contract SupplyChain {
 
         emit ReceivedByCustomer(_uid);
     }
-
-    ///@dev Fetch product
     function fetchProductPart1(
         uint256 _uid,
         string memory _type,
@@ -380,8 +334,6 @@ contract SupplyChain {
             product.image
         );
     }
-
-    ///@dev Fetch product
     function fetchProductPart2(
         uint256 _uid,
         string memory _type,
