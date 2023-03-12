@@ -78,8 +78,8 @@ export const useStyles = makeStyles({
   },
   ProductPaper: {
     padding: 10,
-    borderRadius: 10,
-    boxShadow: "2px 2px 10px #9fa8da",
+    // borderRadius: 10,
+    // boxShadow: "2px 2px 10px #9fa8da",
     border: "2px solid #000",
   },
   ExplorerdRow: {

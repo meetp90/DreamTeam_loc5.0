@@ -150,8 +150,9 @@ export default function PersistentDrawerLeft({
       >
         <div className={classes.drawerHeader}>
           <ListItemText>
-            <b style={{ fontSize: "50px" }}>{pageTitle}</b>
+            <b>{pageTitle}</b>
           </ListItemText>
+
           <IconButton onClick={handleDrawerClose}>
             {theme.direction === "ltr" ? (
               <ChevronLeftIcon style={{ color: "#fff" }} />
@@ -230,7 +231,7 @@ export default function PersistentDrawerLeft({
         })}
       >
         <div className={classes.drawerHeader} />
-        <div style={{ margin: "0 auto", maxWidth: 1300 }}>{children}</div>
+        <div style={{ maxWidth: 1300 }}>{children}</div>
       </main>
     </div>
   );

@@ -173,9 +173,9 @@ export default function Explorer(props) {
                         <Button
                           type="submit"
                           variant="contained"
-                          color="primary"
+                          color="black"
                           onClick={() => handleClick(productData)}
-                          style={{ margin: "10px auto" }}
+                          style={{ margin: "10px auto",fontFamily:"Libre Baskerville" }}
                         >
                           MORE DETAILS
                         </Button>

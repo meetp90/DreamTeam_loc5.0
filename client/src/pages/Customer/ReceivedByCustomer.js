@@ -12,7 +12,14 @@ import { useStyles } from "../../components/Styles";
 import ProductModal from "../../components/Modal";
 import clsx from "clsx";
 import Loader from "../../components/Loader";
-
+import Card from '@material-ui/core/Card';
+import CardActionArea from '@material-ui/core/CardActionArea';
+import CardActions from '@material-ui/core/CardActions';
+import CardContent from '@material-ui/core/CardContent';
+import CardMedia from '@material-ui/core/CardMedia';
+import Typography from '@material-ui/core/Typography';
+import { img1 } from '../../images/web3.jpg';
+import Grid from '@material-ui/core/Grid';
 export default function ReceivedByCustomer(props) {
   const classes = useStyles();
   const supplyChainContract = props.supplyChainContract;
@@ -85,7 +92,9 @@ export default function ReceivedByCustomer(props) {
   return (
     <>
       <div classname={classes.pageWrap}>
-        <Navbar pageTitle={"Customer"} navItems={navItem}>
+        <Navbar
+          pageTitle={'Customer'}
+          navItems={navItem}>
           {loading ? (
             <Loader />
           ) : (
@@ -101,128 +110,74 @@ export default function ReceivedByCustomer(props) {
               </h3>
               <>
                 <div>
-                  <Paper className={classes.TableRoot}>
-                    <TableContainer className={classes.TableContainer}>
-                      <Table stickyHeader aria-label="sticky table">
-                        <TableHead>
-                          <TableRow>
-                            <TableCell
-                              className={classes.TableHead}
-                              align="left"
-                            >
-                              Universal ID
-                            </TableCell>
-                            <TableCell
-                              className={classes.TableHead}
-                              align="center"
-                            >
-                              Product Code
-                            </TableCell>
-                            <TableCell
-                              className={classes.TableHead}
-                              align="center"
-                            >
-                              Manufacturer
-                            </TableCell>
-                            <TableCell
-                              className={classes.TableHead}
-                              align="center"
-                            >
-                              Manufacture Date
-                            </TableCell>
-                            <TableCell
-                              className={classes.TableHead}
-                              align="center"
-                            >
-                              Product Name
-                            </TableCell>
-                            <TableCell
-                              className={clsx(
-                                classes.TableHead,
-                                classes.AddressCell
-                              )}
-                              align="center"
-                            >
-                              Owner
-                            </TableCell>
-                          </TableRow>
-                        </TableHead>
-                        <TableBody>
-                          {allReceived.length !== 0 ? (
-                            allReceived
-                              .slice(
-                                page * rowsPerPage,
-                                page * rowsPerPage + rowsPerPage
-                              )
-                              .map((prod) => {
-                                const d = new Date(parseInt(prod[1][0] * 1000));
-                                return (
-                                  <TableRow
-                                    hover
-                                    role="checkbox"
-                                    tabIndex={-1}
-                                    key={prod[0][0]}
-                                    onClick={() => handleClick(prod)}
-                                  >
-                                    <TableCell
-                                      className={classes.TableCell}
-                                      component="th"
-                                      align="left"
-                                      scope="row"
-                                    >
-                                      {prod[0][0]}
-                                    </TableCell>
-                                    <TableCell
-                                      className={classes.TableCell}
-                                      align="center"
-                                    >
-                                      {prod[1][2]}
-                                    </TableCell>
-                                    <TableCell
-                                      className={classes.TableCell}
-                                      align="center"
-                                    >
-                                      {prod[0][4]}
-                                    </TableCell>
-                                    <TableCell align="center">
-                                      {d.toDateString() +
-                                        " " +
-                                        d.toTimeString()}
-                                    </TableCell>
-                                    <TableCell
-                                      className={classes.TableCell}
-                                      align="center"
-                                    >
-                                      {prod[1][1]}
-                                    </TableCell>
-                                    <TableCell
-                                      className={clsx(
-                                        classes.TableCell,
-                                        classes.AddressCell
-                                      )}
-                                      align="left"
-                                    >
-                                      {prod[0][2]}
-                                    </TableCell>
-                                  </TableRow>
-                                );
-                              })
-                          ) : (
-                            <> </>
-                          )}
-                        </TableBody>
-                      </Table>
-                    </TableContainer>
-                    <TablePagination
-                      rowsPerPageOptions={[10, 25, 100]}
-                      component="div"
-                      count={allReceived.length}
-                      rowsPerPage={rowsPerPage}
-                      page={page}
-                      onChangePage={handleChangePage}
-                      onChangeRowsPerPage={handleChangeRowsPerPage}
-                    />
-                  </Paper>
+                  {allReceived.length !== 0 ? (
+                    allReceived.map((prod) => {
+                      const d = new Date(parseInt(prod[1][0] * 1000));
+                      return (
+                        <>
+                          <Grid
+                            item
+                            xs={4}
+                            onClick={() => handleClick(prod)}>
+                            <Card className={classes.root}>
+                              <CardActionArea>
+                                <CardMedia
+                                  style={{
+                                    height: '250px',
+                                    paddingTop: '2%',
+                                  }}
+                                  component="img"
+                                  image={`https://ipfs.io/ipfs/${prod[0][8]}`}
+                                  title="Picture"
+                                  alt="pic"
+                                />
+                                <CardContent>
+                                  <Typography
+                                    gutterBottom
+                                    variant="h5"
+                                    component="h2">
+                                    {prod[1][1]}
+                                  </Typography>
+                                  <Typography
+                                    variant="body2"
+                                    color="textSecondary"
+                                    component="p">
+                                    Product Code: {prod[1][2]}
+                                  </Typography>
+                                  <Typography
+                                    variant="body2"
+                                    color="textSecondary"
+                                    component="p">
+                                    Manufacturer: {prod[0][4]}
+                                  </Typography>
+                                  <Typography
+                                    variant="body2"
+                                    color="textSecondary"
+                                    component="p">
+                                    Owner: {prod[0][2]}
+                                  </Typography>
+                                  <Typography
+                                    variant="body2"
+                                    color="textSecondary"
+                                    component="p">
+                                    Date: {d.toDateString()}
+                                  </Typography>
+                                </CardContent>
+                              </CardActionArea>
+                              <CardActions
+                                style={{
+                                  display: 'flex',
+                                  alignItems: 'center',
+                                  justifyContent: 'center',
+                                }}></CardActions>
+                            </Card>
+                          </Grid>
+                        </>
+                      );
+                    })
+                  ) : (
+                    <> </>
+                  )}
                 </div>
               </>
             </>

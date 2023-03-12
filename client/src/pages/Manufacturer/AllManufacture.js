@@ -1,17 +1,19 @@
-import React from "react";
-import Navbar from "../../components/Navbar";
-import Table from "@material-ui/core/Table";
-import TableBody from "@material-ui/core/TableBody";
-import TableCell from "@material-ui/core/TableCell";
-import TableContainer from "@material-ui/core/TableContainer";
-import TableHead from "@material-ui/core/TableHead";
-import TableRow from "@material-ui/core/TableRow";
-import Paper from "@material-ui/core/Paper";
-import TablePagination from "@material-ui/core/TablePagination";
-import { useStyles } from "../../components/Styles";
-import ProductModal from "../../components/Modal";
-import clsx from "clsx";
-import Loader from "../../components/Loader";
+/** @format */
+
+import React from 'react';
+import Navbar from '../../components/Navbar';
+import Table from '@material-ui/core/Table';
+import TableBody from '@material-ui/core/TableBody';
+import TableCell from '@material-ui/core/TableCell';
+import TableContainer from '@material-ui/core/TableContainer';
+import TableHead from '@material-ui/core/TableHead';
+import TableRow from '@material-ui/core/TableRow';
+import Paper from '@material-ui/core/Paper';
+import TablePagination from '@material-ui/core/TablePagination';
+import { useStyles } from '../../components/Styles';
+import ProductModal from '../../components/Modal';
+import clsx from 'clsx';
+import Loader from '../../components/Loader';
 import Card from '@material-ui/core/Card';
 import CardActionArea from '@material-ui/core/CardActionArea';
 import CardActions from '@material-ui/core/CardActions';
@@ -19,21 +21,20 @@ import CardContent from '@material-ui/core/CardContent';
 import CardMedia from '@material-ui/core/CardMedia';
 import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
-import {img1} from '../../images/web3.jpg'
+import { img1 } from '../../images/web3.jpg';
 import Grid from '@material-ui/core/Grid';
-
 
 export default function AllManufacture(props) {
   const supplyChainContract = props.supplyChainContract;
   const classes = useStyles();
-  
+
   const [count, setCount] = React.useState(0);
   const [allManufacture, setAllManufacture] = React.useState([]);
   const [loading, setLoading] = React.useState(false);
   const navItem = [
-    ["Add Product", "/manufacturer/manufacture"],
-    ["Ship Product", "/manufacturer/ship"],
-    ["All Products", "/manufacturer/allManufacture"],
+    ['Add Product', '/manufacturer/manufacture'],
+    ['Ship Product', '/manufacturer/ship'],
+    ['All Products', '/manufacturer/allManufacture'],
   ];
   React.useEffect(() => {
     setLoading(true);
@@ -50,16 +51,16 @@ export default function AllManufacture(props) {
           .fetchProductState(i)
           .call();
 
-        if (prodState === "0") {
+        if (prodState === '0') {
           const prodData = [];
           const a = await supplyChainContract.methods
-            .fetchProductPart1(i, "product", 0)
+            .fetchProductPart1(i, 'product', 0)
             .call();
           const b = await supplyChainContract.methods
-            .fetchProductPart2(i, "product", 0)
+            .fetchProductPart2(i, 'product', 0)
             .call();
           const c = await supplyChainContract.methods
-            .fetchProductPart3(i, "product", 0)
+            .fetchProductPart3(i, 'product', 0)
             .call();
           prodData.push(a);
           prodData.push(b);
@@ -69,7 +70,6 @@ export default function AllManufacture(props) {
       }
       setAllManufacture(arr);
       setLoading(false);
-      
     })();
   }, [count]);
 
@@ -94,17 +94,16 @@ export default function AllManufacture(props) {
     await setModalData(prod);
     setOpen(true);
   };
-  console.log(allManufacture)
+  console.log(allManufacture);
   return (
     <div classname={classes.pageWrap}>
-
-     
-      <Navbar pageTitle={"Manufacturer"} navItems={navItem}>
+      <Navbar
+        pageTitle={'Manufacturer'}
+        navItems={navItem}>
         {loading ? (
           <Loader />
         ) : (
           <div>
-      
             <ProductModal
               prod={modalData}
               open={open}
@@ -131,7 +130,7 @@ export default function AllManufacture(props) {
             <CardMedia
               style={{ height: "250px", paddingTop: "2%" }}
               component="img"
-              image={'https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885__480.jpg'}
+              image={`https://ipfs.io/ipfs/${prod[0][8]}`}
               title="Picture"
               alt="pic"
             />
