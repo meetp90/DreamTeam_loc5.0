@@ -203,6 +203,7 @@ export default function PurchaseCustomer(props) {
                                         type="submit"
                                         variant="contained"
                                         color="#000"
+                                        
                                         onClick={() =>
                                           handleBuyButton(prod[0][0])
                                         }
