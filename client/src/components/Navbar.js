@@ -150,9 +150,7 @@ export default function PersistentDrawerLeft({
           <ListItemText>
             <b>{pageTitle}</b>
           </ListItemText>
-          <ListItemText>
-            <b>{pageTitle}</b>
-          </ListItemText>
+         
           <IconButton onClick={handleDrawerClose}>
             {theme.direction === "ltr" ? (
               <ChevronLeftIcon style={{ color: "#fff" }} />
