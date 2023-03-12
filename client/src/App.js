@@ -158,7 +158,9 @@ class App extends Component {
                       supplyChainContract={this.state.contract}
                     />
                   ) : (
-                    <h1>Assign Third Party Role at /RoleAdmin</h1>
+                    <h1 style={{ color: "red", fontSize: "20px" }}>
+                      Assign Third Party Role at /RoleAdmin
+                    </h1>
                   )}
                 </Route>
                 <Route exact path="/ThirdParty/receive">

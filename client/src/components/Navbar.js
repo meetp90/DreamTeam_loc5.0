@@ -132,6 +132,11 @@ export default function PersistentDrawerLeft({
           >
             <img
               alt="."
+              src="/icon-n.png"
+              style={{ height: "110px", width: "100%", padding: "15px 25px" }}
+            />
+            <img
+              alt="."
               src="/logo5.png"
               style={{ height: "90px", width: "100%", padding: "15px 25px" }}
             />
