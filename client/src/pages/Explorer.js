@@ -175,7 +175,10 @@ export default function Explorer(props) {
                           variant="contained"
                           color="black"
                           onClick={() => handleClick(productData)}
-                          style={{ margin: "10px auto",fontFamily:"Libre Baskerville" }}
+                          style={{
+                            margin: "10px auto",
+                            fontFamily: "Libre Baskerville",
+                          }}
                         >
                           MORE DETAILS
                         </Button>
@@ -308,7 +311,7 @@ export default function Explorer(props) {
                                     color="primary"
                                     onClick={() => fetchTxRecipt(row[2][5])}
                                   >
-                                    RECIPT
+                                    RECEIPT
                                   </Button>
                                 </TableCell>
                               </TableRow>
