@@ -137,21 +137,7 @@ export default function PersistentDrawerLeft({
               src="/logo5.png"
               style={{ height: "75px", width: "100%", padding: "15px 25px" }}
             />
-            <Link
-              to="/explorer"
-              style={{ textDecoration: 'none', color: '#fff', marginLeft:"250px" }}>
-              <ListItem>
-                <ListItemText>
-                  <span
-                    style={{
-                      color: 'white',
-                      fontSize: '25px',
-                    }}>
-                    View Product History
-                  </span>
-                </ListItemText>
-              </ListItem>
-            </Link>
+            
             {/* &nbsp;DecentSupply. */}
           </Typography>
         </Toolbar>
@@ -194,6 +180,45 @@ export default function PersistentDrawerLeft({
                     fontSize: '25px',
                   }}>
                   Home
+                </span>
+              </ListItemText>
+            </ListItem>
+          </Link>
+          <Link
+            to="/explorer"
+            style={{ textDecoration: "none", color: "#fff" }}
+          >
+            <ListItem>
+              <ListItemText>
+                <span
+                  style={{
+                    color: "white",
+                    fontSize: "25px",
+                  }}
+                >
+                  View Product Details
+                </span>
+              </ListItemText>
+            </ListItem>
+          </Link>
+          <Link
+            to="/roleAdmin"
+            style={{
+              textDecoration: "none",
+              color: "#fff",
+              fontFamily: "Libre Baskerville",
+              // fontSize: "130px",
+            }}
+          >
+            <ListItem>
+              <ListItemText>
+                <span
+                  style={{
+                    color: "white",
+                    fontSize: "25px",
+                  }}
+                >
+                  Assign
                 </span>
               </ListItemText>
             </ListItem>
