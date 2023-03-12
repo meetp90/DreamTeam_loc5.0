@@ -50,8 +50,9 @@ const useStyles = makeStyles((theme) => ({
   },
   drawerPaper: {
     width: drawerWidth,
-    backgroundColor: "#023",
-    color: "#fff",
+    backgroundColor: "#292826",
+    opacity: "0.5",
+    color: "#000",
   },
   drawerHeader: {
     display: "flex",
@@ -70,6 +71,7 @@ const useStyles = makeStyles((theme) => ({
       duration: theme.transitions.duration.leavingScreen,
     }),
     marginLeft: -drawerWidth,
+    color: "#000",
     // fontSize: "20px",
   },
   contentShift: {
@@ -107,7 +109,7 @@ export default function PersistentDrawerLeft({
           [classes.appBarShift]: open,
         })}
       >
-        <Toolbar style={{ backgroundColor: "#000" }}>
+        <Toolbar style={{ backgroundColor: "#000000" }}>
           <IconButton
             color="inherit"
             aria-label="open drawer"
@@ -128,12 +130,12 @@ export default function PersistentDrawerLeft({
               padding: "10px 20px",
             }}
           >
-            {/* <img
+            <img
               alt="."
-              src="/logo.png"
-              style={{ height: '45px', width: 'auto' }}
-            /> */}
-            &nbsp;DecentSupply.
+              src="/logo5.png"
+              style={{ height: "90px", width: "100%", padding: "15px 25px" }}
+            />
+            {/* &nbsp;DecentSupply. */}
           </Typography>
         </Toolbar>
       </AppBar>
@@ -148,10 +150,7 @@ export default function PersistentDrawerLeft({
       >
         <div className={classes.drawerHeader}>
           <ListItemText>
-            <b>{pageTitle}</b>
-          </ListItemText>
-          <ListItemText>
-            <b>{pageTitle}</b>
+            <b style={{ fontSize: "50px" }}>{pageTitle}</b>
           </ListItemText>
           <IconButton onClick={handleDrawerClose}>
             {theme.direction === "ltr" ? (
@@ -168,11 +167,20 @@ export default function PersistentDrawerLeft({
               textDecoration: "none",
               color: "#fff",
               fontFamily: "Libre Baskerville",
-              fontSize: "130px",
+              // fontSize: "130px",
             }}
           >
             <ListItem>
-              <ListItemText>Home</ListItemText>
+              <ListItemText>
+                <span
+                  style={{
+                    color: "white",
+                    fontSize: "25px",
+                  }}
+                >
+                  Home
+                </span>
+              </ListItemText>
             </ListItem>
           </Link>
           <Link
@@ -180,7 +188,16 @@ export default function PersistentDrawerLeft({
             style={{ textDecoration: "none", color: "#fff" }}
           >
             <ListItem>
-              <ListItemText>Explorer</ListItemText>
+              <ListItemText>
+                <span
+                  style={{
+                    color: "white",
+                    fontSize: "25px",
+                  }}
+                >
+                  Explorer
+                </span>
+              </ListItemText>
             </ListItem>
           </Link>
         </List>
@@ -189,7 +206,10 @@ export default function PersistentDrawerLeft({
             navItems.map((item) => (
               <Link
                 to={item[1]}
-                style={{ textDecoration: "none", color: "#fff" }}
+                style={{
+                  textDecoration: "none",
+                  color: "#fff",
+                }}
               >
                 <ListItem button key={item[0]}>
                   <ListItemText primary={item[0]} />
@@ -202,29 +222,7 @@ export default function PersistentDrawerLeft({
         </List>
         <div
           style={{ height: "100%", display: "flex", alignItems: "flex-end" }}
-        >
-          {/* <div
-            style={{
-              width: "100%",
-              height: "70px",
-              display: "flex",
-              justifyContent: "center",
-              alignItems: "center",
-              fontWeight: 500,
-              fontSize: 17,
-              borderTop: "1px solid orange",
-            }}
-          >
-            By Dream Team &nbsp;&nbsp;
-            <a
-              style={{ textDecoration: "none" }}
-              href="https://github.com/rishav4101/eth-supplychain-dapp"
-            >
-              <GitHubIcon style={{ color: "#fff" }} />
-            </a>
-          </div>{" "}
-          */}
-        </div>
+        ></div>
       </Drawer>
       <main
         className={clsx(classes.content, {

@@ -28,11 +28,23 @@ export default function Home() {
                 minHeight: "100%",
                 width: "100%",
                 display: "flex",
-                justifyContent: "center",
-                alignItems: "center",
+                justifyContent: "start",
+                alignItems: "end",
                 flexWrap: "wrap",
               }}
             >
+              {/* <h1
+                style={{
+                  color: "#fff",
+                  fontSize: "20px",
+                  opacity: "0.5",
+                  fontFamily: "Bodoni",
+                  fontWeight: "100",
+                }}
+              >
+                Experience the epitome of luxury with our exquisite collection
+                of Decent Supply. products.
+              </h1> */}
               {/* <img
                 alt="."
                 src="/homeArt.png"
@@ -54,7 +66,7 @@ export default function Home() {
               }}
             >
               <div className={classes.HomeCardWrap}>
-                <h1 className={classes.pageHeading}>Assign Roles</h1>
+                <h1 className={classes.pageHeading}>ASSIGN ROLES</h1>
                 <Link
                   to="/roleAdmin"
                   style={{ textDecoration: "none", color: "#fff" }}
@@ -63,13 +75,13 @@ export default function Home() {
                     className={classes.HomeBtn}
                     size="large"
                     variant="outlined"
-                    style={{ color: "gold" }}
+                    style={{}}
                   >
                     Assign
                   </Button>
                 </Link>
                 <br />
-                <h1 className={classes.pageHeading}>Visit As</h1>
+                <h1 className={classes.pageHeading}>VISIT AS</h1>
                 <Link
                   to="/manufacturer/manufacture"
                   style={{ textDecoration: "none", color: "#fff" }}
@@ -90,7 +102,8 @@ export default function Home() {
                     className={classes.HomeBtn}
                     size="large"
                     variant="outlined"
-                    style={{}}>
+                    style={{}}
+                  >
                     Distributor
                   </Button>
                 </Link>
@@ -104,7 +117,7 @@ export default function Home() {
                     variant="outlined"
                     style={{}}
                   >
-                   BlockDart
+                    Blockdart
                   </Button>
                 </Link>
                 <Link

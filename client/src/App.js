@@ -28,6 +28,7 @@ import theme from "./components/Theme";
 
 import Explorer from "./pages/Explorer";
 import Home from "./pages/Home";
+import LandingPage from "./pages/LandingPage";
 
 class App extends Component {
   state = {
@@ -97,6 +98,9 @@ class App extends Component {
           >
             <Router history={createBrowserHistory()}>
               <Switch>
+                <Route exact path="/new">
+                  <LandingPage />
+                </Route>
                 <Route exact path="/roleAdmin">
                   <RoleAdmin
                     accounts={this.state.accounts}
